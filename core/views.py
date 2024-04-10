@@ -25,6 +25,10 @@ class Viewsets_show_all_address_customer(viewsets.ModelViewSet):
 class Viewsets_show_all_tools(viewsets.ModelViewSet):
     queryset = Tools.objects.all()
     serializer_class = ToolsSerializer
+
+class Viewsets_show_all_Categories(viewsets.ModelViewSet):
+    queryset = Categories.objects.all()
+    serializer_class = CategoriesSerializer
     
     
 class Viewsets_order(viewsets.ModelViewSet):

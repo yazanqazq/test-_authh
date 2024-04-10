@@ -19,3 +19,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ['id','order_date', 'status_field', 'shipping_type','total']
     
 
+
+@admin.register(Categories)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ['categories']

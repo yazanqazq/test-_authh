@@ -33,13 +33,25 @@ class Order(models.Model):
     def __str__(self):
         return self.customer.username
 
+class Categories(models.Model):
+    class categories(models.IntegerChoices):
+        Construction_equipment  = 1
+        Drilling_equipment      =2
+        Transportation_equipment=3
+        Agriculture_equipment   =4
+        Electrical_equipment    =5
+        Maintenance_equipment   =6
+    categories = models.IntegerField(choices=categories)
 
+    def __str__(self):
+        return self.get_categories_display()
 
 class Tools(models.Model):
     item_name = models.CharField(max_length=200)
     address = models.ForeignKey(Address,related_name='Tools', on_delete=models.CASCADE)
     item_description= models.CharField(max_length=500,null=True,blank=True)
     customer = models.ForeignKey(User, on_delete=models.SET_NULL,null=True)
+    categories = models.ForeignKey(Categories, on_delete=models.SET_NULL,null=True,blank=True)
     quantity = models.IntegerField()
     item_price = models.FloatField()
     shipping_cost=models.FloatField()

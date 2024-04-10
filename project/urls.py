@@ -13,6 +13,7 @@ router.register('show_all_customer',Viewsets_show_all_address_customer)
 router.register('show_all_tools',Viewsets_show_all_tools, basename='all_tools')
 router.register('order',Viewsets_order)
 router.register('my_tools',Viewsets_my_tools, basename='my_tools')
+router.register('Categories',Viewsets_show_all_Categories, basename='Categories')
 
 # router.register('exam', ExampleView)
 

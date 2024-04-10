@@ -23,3 +23,7 @@ class OrderSerializer(serializers.ModelSerializer):
     class Meta:
       model =Order
       fields='__all__'
+class CategoriesSerializer(serializers.ModelSerializer):
+    class Meta:
+      model =Categories
+      fields='__all__'
